@@ -1,0 +1,53 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "user_uuid": "5b5aaff5-4324-4874-8970-7c375b7d889e",
+      "username": "Code With Ania Kubow",
+      "handle": "aniakubow",
+      "bio": "I'm a software engineer, a teacher, and a life-long learner. I love to teach and learn new things.",
+      "link": "https://www.youtube.com/channel/UC5DNytAJ6_FISueUfzZCVsw",
+      "img": "https://images.pexels.com/photos/1162361/pexels-photo-1162361.jpeg?cs=srgb&dl=pexels-daniel-nettesheim-1162361.jpg&fm=jpg",
+      "instagram_url": "https://www.instagram.com/aniakubow/",
+      "followers": [
+        {
+          "user_uuid": "f49edac4-ea96-4bdf-9bf4-7c215728d711"
+        },
+        {
+          "user_uuid": "2f9c978c-3ce2-4308-815f-583b3f8f4cde"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "user_uuid": "f49edac4-ea96-4bdf-9bf4-7c215728d711",
+      "username": "Bobby's Burgers",
+      "handle": "bobbyburgers",
+      "bio": "If burgers are your thing, then you've come to the right place. We've got the best burgers in town!",
+      "link": "https://www.bobbysburgers.com",
+      "img": "https://imgur.com/GvPaiJm",
+      "instagram_url": "https://www.instagram.com/bobbyburger/",
+      "followers": [
+        {
+          "user_uuid": "5b5aaff5-4324-4874-8970-7c375b7d889e"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "user_uuid": "2f9c978c-3ce2-4308-815f-583b3f8f4cde",
+      "username": "Ani Talli",
+      "handle": "truthsayer",
+      "bio": "Just a person who likes to speak the truth.",
+      "link": "https://elpais.com/",
+      "img": "https://i.imgur.com/gwsj93d.jpeg",
+      "instagram_url": "https://www.instagram.com/anitalli/",
+      "followers": [
+        {
+          "user_uuid": "5b5aaff5-4324-4874-8970-7c375b7d889e"
+        }
+      ]
+    }
+  ],
+  "threads": []
+}
