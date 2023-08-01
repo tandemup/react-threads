@@ -1,5 +1,11 @@
 const ThreadInput = () => {
-  return <article className="feed-card"></article>;
+  return (
+    <>
+      <p></p>
+      <input />
+      <button></button>
+    </>
+  );
 };
 
 export default ThreadInput;
