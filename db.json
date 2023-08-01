@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": 0,
       "user_uuid": "5b5aaff5-4324-4874-8970-7c375b7d889e",
       "username": "Code With Ania Kubow",
       "handle": "aniakubow",
@@ -19,7 +19,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": 1,
       "user_uuid": "f49edac4-ea96-4bdf-9bf4-7c215728d711",
       "username": "Bobby's Burgers",
       "handle": "bobbyburgers",
@@ -34,7 +34,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": 2,
       "user_uuid": "2f9c978c-3ce2-4308-815f-583b3f8f4cde",
       "username": "Ani Talli",
       "handle": "truthsayer",
@@ -49,5 +49,58 @@
       ]
     }
   ],
-  "threads": []
+  "threads": [
+    {
+      "id": 0,
+      "timestamp": "Tue Aug 01 2023 18:13:18 GMT+0200 (Central European Summer Time)",
+      "thread_from": "5b5aaff5-4324-4874-8970-7c375b7d889e",
+      "thread_to": null,
+      "reply_to": null,
+      "text": "Hello world (of threads)",
+      "likes": [
+        {
+          "uuid": "2f9c978c-3ce2-4308-815f-583b3f8f4cde"
+        },
+        {
+          "uuid": "f49edac4-ea96-4bdf-9bf4-7c215728d711"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "timestamp": "Tue Aug 01 2023 19:13:18 GMT+0200 (Central European Summer Time)",
+      "thread_from": "5b5aaff5-4324-4874-8970-7c375b7d889e",
+      "thread_to": null,
+      "reply_to": null,
+      "text": "Awesome thread!",
+      "likes": []
+    },
+    {
+      "id": 2,
+      "timestamp": "Tue Aug 01 2023 19:30:18 GMT+0200 (Central European Summer Time)",
+      "thread_from": "5b5aaff5-4324-4874-8970-7c375b7d889e",
+      "thread_to": null,
+      "reply_to": null,
+      "text": "Another one!",
+      "likes": []
+    },
+    {
+      "id": 3,
+      "timestamp": "Tue Aug 01 2023 20:30:18 GMT+0200 (Central European Summer Time)",
+      "thread_from": "f49edac4-ea96-4bdf-9bf4-7c215728d711",
+      "thread_to": null,
+      "reply_to": null,
+      "text": "Excited to have launched Bobbys burgers!",
+      "likes": []
+    },
+    {
+      "id": 4,
+      "timestamp": "Tue Aug 01 2023 20:35:18 GMT+0200 (Central European Summer Time)",
+      "thread_from": "5b5aaff5-4324-4874-8970-7c375b7d889e",
+      "thread_to": "f49edac4-ea96-4bdf-9bf4-7c215728d711",
+      "reply_to": 3,
+      "text": "Congrats!",
+      "likes": []
+    }
+  ]
 }
