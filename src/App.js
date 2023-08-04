@@ -6,6 +6,10 @@ import PopUp from "./components/PopUp";
 
 const App = () => {
   const [user, setUser] = useState(null);
+  const [threads, setThreads] = useState(null);
+  const [viewThreadsFeed, setViewThreadsFeed] = useState(true);
+  const [filteredThreads, setFilteredThreads] = useState(null);
+
   const userId = "5b5aaff5-4324-4874-8970-7c375b7d889e";
 
   const getUser = async () => {
@@ -15,25 +19,61 @@ const App = () => {
       );
       const data = await response.json();
       setUser(data[0]);
-      console.log(data);
     } catch (error) {
       console.error(error);
     }
   };
 
+  const getThreads = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/threads?threads?thread_from=${userId}`)
+      const data = await response.json()
+      setThreads(data)
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  const getThreadsFeed = async () => {
+    if (viewThreadsFeed) {
+      const standAloneThreads = threads?.filter(thread => thread.reply_to === null)
+      setFilteredThreads(standAloneThreads)
+    }
+    if (!viewThreadsFeed) {
+      const replyThreads = threads?.filter(thread => thread.reply_to !== null)
+      setFilteredThreads(replyThreads)
+    }
+  }
+
   useEffect(() => {
     getUser();
+    getThreads();
   }, []);
 
-  console.log(user);
+  useEffect(() => {
+    getThreadsFeed(); 
+  }, [user, threads, viewThreadsFeed])
+
+  console.log(filteredThreads);
 
   return (
-    <div className="app">
-      <Nav />
-      <Header />
-      <Feed />
-      {/* <PopUp /> */}
-    </div>
+    <>
+      {user && (
+        <div className="app">
+          <Nav url={user.instagram_url} />
+          <Header 
+            user={user}
+            viewThreadsFeed={viewThreadsFeed}
+            setViewThreadsFeed={setViewThreadsFeed} 
+          />
+          <Feed 
+              user={user}
+              filteredThreads={FilteredThreads}
+          />
+          {/* <PopUp /> */}
+        </div>
+      )}
+    </>
   );
 };
 

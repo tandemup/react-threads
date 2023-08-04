@@ -1,0 +1,106 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "user_uuid": "5b5aaff5-4324-4874-8970-7c375b7d889e",
+      "username": "Code With Ania Kubow",
+      "handle": "aniakubow",
+      "bio": "I'm a software engineer, a teacher, and a life-long learner. I love to teach and learn new things.",
+      "link": "https://www.youtube.com/channel/UC5DNytAJ6_FISueUfzZCVsw",
+      "img": "https://images.pexels.com/photos/1162361/pexels-photo-1162361.jpeg?cs=srgb&dl=pexels-daniel-nettesheim-1162361.jpg&fm=jpg",
+      "instagram_url": "https://www.instagram.com/aniakubow/",
+      "followers": [
+        {
+          "user_uuid": "f49edac4-ea96-4bdf-9bf4-7c215728d711"
+        },
+        {
+          "user_uuid": "2f9c978c-3ce2-4308-815f-583b3f8f4cde"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "user_uuid": "f49edac4-ea96-4bdf-9bf4-7c215728d711",
+      "username": "Bobby's Burgers",
+      "handle": "bobbyburgers",
+      "bio": "If burgers are your thing, then you've come to the right place. We've got the best burgers in town!",
+      "link": "https://www.bobbysburgers.com",
+      "img": "https://imgur.com/GvPaiJm",
+      "instagram_url": "https://www.instagram.com/bobbyburger/",
+      "followers": [
+        {
+          "user_uuid": "5b5aaff5-4324-4874-8970-7c375b7d889e"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "user_uuid": "2f9c978c-3ce2-4308-815f-583b3f8f4cde",
+      "username": "Ani Talli",
+      "handle": "truthsayer",
+      "bio": "Just a person who likes to speak the truth.",
+      "link": "https://elpais.com/",
+      "img": "https://i.imgur.com/gwsj93d.jpeg",
+      "instagram_url": "https://www.instagram.com/anitalli/",
+      "followers": [
+        {
+          "user_uuid": "5b5aaff5-4324-4874-8970-7c375b7d889e"
+        }
+      ]
+    }
+  ],
+  "threads": [
+    {
+      "id": 0,
+      "timestamp": "Tue Aug 01 2023 18:13:18 GMT+0200 (Central European Summer Time)",
+      "thread_from": "5b5aaff5-4324-4874-8970-7c375b7d889e",
+      "thread_to": null,
+      "reply_to": null,
+      "text": "Hello world (of threads)",
+      "likes": [
+        {
+          "uuid": "2f9c978c-3ce2-4308-815f-583b3f8f4cde"
+        },
+        {
+          "uuid": "f49edac4-ea96-4bdf-9bf4-7c215728d711"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "timestamp": "Tue Aug 01 2023 19:13:18 GMT+0200 (Central European Summer Time)",
+      "thread_from": "5b5aaff5-4324-4874-8970-7c375b7d889e",
+      "thread_to": null,
+      "reply_to": null,
+      "text": "Awesome thread!",
+      "likes": []
+    },
+    {
+      "id": 2,
+      "timestamp": "Tue Aug 01 2023 19:30:18 GMT+0200 (Central European Summer Time)",
+      "thread_from": "5b5aaff5-4324-4874-8970-7c375b7d889e",
+      "thread_to": null,
+      "reply_to": null,
+      "text": "Another one!",
+      "likes": []
+    },
+    {
+      "id": 3,
+      "timestamp": "Tue Aug 01 2023 20:30:18 GMT+0200 (Central European Summer Time)",
+      "thread_from": "f49edac4-ea96-4bdf-9bf4-7c215728d711",
+      "thread_to": null,
+      "reply_to": null,
+      "text": "Excited to have launched Bobbys burgers!",
+      "likes": []
+    },
+    {
+      "id": 4,
+      "timestamp": "Tue Aug 01 2023 20:35:18 GMT+0200 (Central European Summer Time)",
+      "thread_from": "5b5aaff5-4324-4874-8970-7c375b7d889e",
+      "thread_to": "f49edac4-ea96-4bdf-9bf4-7c215728d711",
+      "reply_to": 3,
+      "text": "Congrats!",
+      "likes": []
+    }
+  ]
+}
