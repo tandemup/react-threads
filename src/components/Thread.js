@@ -1,4 +1,13 @@
-const Thread = ({user, filteredThread}) => {
+import { useState, useEffect } from "react"
+import moment from "moment" 
+
+const Thread = ({user, setOpenPopUp, filteredThread}) => {
+
+  const timePassed = moment().startOf('day').fromNow(filteredThread.timestamp)
+  const handleClick = () => {
+    setOpenPopUp(true)          
+  }
+
   return (
     <article className="feed-card">
       <div className="text-container">
@@ -11,7 +20,7 @@ const Thread = ({user, filteredThread}) => {
             <p>{filteredThread.text}</p>
           </div>
         </div>
-        <p className="sub-text">time</p>
+        <p className="sub-text">{timePassed}</p>
       </div>
       <div className="icons">
         <svg
@@ -27,7 +36,7 @@ const Thread = ({user, filteredThread}) => {
             fill-rule="nonzero"
           />
         </svg>
-        <svg
+        <svg onClick={handleClick}
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
@@ -53,7 +62,7 @@ const Thread = ({user, filteredThread}) => {
         </svg>
       </div>
       <p className="sub-text">
-        <span>X replies</span> • <span>X likes</span>
+        <span onClick={handleClick}>X replies</span> • <span>{filteredThread.likes.length} likes</span>
       </p>
     </article>
   );

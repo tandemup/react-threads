@@ -3,12 +3,14 @@ import Nav from "./components/Nav";
 import Header from "./components/Header";
 import Feed from "./components/Feed";
 import PopUp from "./components/PopUp";
+import WriteIcon from "./components/WriteIcon";
 
 const App = () => {
   const [user, setUser] = useState(null);
   const [threads, setThreads] = useState(null);
   const [viewThreadsFeed, setViewThreadsFeed] = useState(true);
   const [filteredThreads, setFilteredThreads] = useState(null);
+  const [openPopUp, setOpenPopUp] = useState(false);  
 
   const userId = "5b5aaff5-4324-4874-8970-7c375b7d889e";
 
@@ -53,7 +55,7 @@ const App = () => {
   useEffect(() => {
     getThreadsFeed(); 
   }, [user, threads, viewThreadsFeed])
-
+ 
   console.log(filteredThreads);
 
   return (
@@ -68,9 +70,18 @@ const App = () => {
           />
           <Feed 
               user={user}
-              filteredThreads={FilteredThreads}
+              setOpenPopUp={setOpenPopUp} 
+              filteredThreads={filteredThreads}
           />
-          {/* <PopUp /> */}
+          {openPopUp && 
+            <PopUp 
+              user={user} 
+              setOpenPopUp={setOpenPopUp}
+            />}
+          <div onClick={() => setOpenPopUp(true)}>
+              <WriteIcon />
+          </div>
+
         </div>
       )}
     </>
