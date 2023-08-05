@@ -1,11 +1,40 @@
 import { useState, useEffect } from "react"
 import moment from "moment" 
 
-const Thread = ({user, setOpenPopUp, filteredThread}) => {
+const Thread = ({user, setOpenPopUp, filteredThread, getThreads }) => {
 
   const timePassed = moment().startOf('day').fromNow(filteredThread.timestamp)
+
   const handleClick = () => {
     setOpenPopUp(true)          
+  }
+
+  console.log('filteredThread',filteredThread);
+
+  const postLike = async () => {
+    //console.log('postLike---');
+      const hasBeenLikedByUser = filteredThread.likes.some(like => like.user_uuid === user.user_uuid)
+      //console.log('hasBeenLikedByUser',hasBeenLikedByUser); 
+      if (!hasBeenLikedByUser) {
+        filteredThread.likes.push({user_uuid: user.user_uuid})
+        
+        try {
+          const response = await fetch(`http://localhost:3000/threads/${filteredThread.id}`, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+            },
+            body: JSON.stringify(filteredThread)
+          })
+          const result = await response.json()
+          console.log("Success", result); 
+          getThreads() 
+        } catch (error) {
+          console.error(error);
+        }
+        
+    }
   }
 
   return (
@@ -23,7 +52,7 @@ const Thread = ({user, setOpenPopUp, filteredThread}) => {
         <p className="sub-text">{timePassed}</p>
       </div>
       <div className="icons">
-        <svg
+        <svg onClick={postLike}
           clip-rule="evenodd"
           fill-rule="evenodd"
           stroke-linejoin="round"
