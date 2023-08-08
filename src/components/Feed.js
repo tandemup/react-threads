@@ -1,6 +1,6 @@
 import Thread from "./Thread";
 
-const Feed = ({ user, setOpenPopUp, filteredThreads, getThreads }) => {
+const Feed = ({ user, setOpenPopUp, filteredThreads, getThreads, setInteractingThread }) => {
   return (
     <div className="feed">
       { filteredThreads?.map(filteredThread => 
@@ -10,6 +10,7 @@ const Feed = ({ user, setOpenPopUp, filteredThreads, getThreads }) => {
           user={user} 
           filteredThread={filteredThread}
           getThreads={getThreads}
+          setInteractingThread={setInteractingThread}
         />) }
     </div>
   );

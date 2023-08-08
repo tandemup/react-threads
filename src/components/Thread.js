@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react"
 import moment from "moment" 
 
-const Thread = ({user, setOpenPopUp, filteredThread, getThreads }) => {
+const Thread = ({user, setOpenPopUp, filteredThread, getThreads, setInteractingThread }) => {
 
+  const [ replyLenght, setReplyLenght ] = useState(null)
   const timePassed = moment().startOf('day').fromNow(filteredThread.timestamp)
 
   const handleClick = () => {
-    setOpenPopUp(true)          
+    setOpenPopUp(true)
+    setInteractingThread(filteredThread)          
   }
 
   console.log('filteredThread',filteredThread);
@@ -36,6 +38,20 @@ const Thread = ({user, setOpenPopUp, filteredThread, getThreads }) => {
         
     }
   }
+
+  const getRepliesLength = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/threads?reply_to=${filteredThread?.id}`)
+      const data = await response.json()
+      setReplyLenght(data.length)
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    getRepliesLength()
+  }, [filteredThread])
 
   return (
     <article className="feed-card">
@@ -91,7 +107,7 @@ const Thread = ({user, setOpenPopUp, filteredThread, getThreads }) => {
         </svg>
       </div>
       <p className="sub-text">
-        <span onClick={handleClick}>X replies</span> • <span>{filteredThread.likes.length} likes</span>
+        <span onClick={handleClick}>{replyLenght} replies</span> • <span>{filteredThread.likes.length} likes</span>
       </p>
     </article>
   );
